@@ -1,2 +1,2 @@
 # codigos
-Arquivos com exemplos de códigos utilizáveis
+Arquivo notebook Jupyter/Colab com exemplos de códigos utilizáveis
