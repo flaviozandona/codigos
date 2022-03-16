@@ -1,0 +1,59 @@
+DICIONÁRIO
+transformar em lista de tupas -> items()
+transforamr lista de tuplas em dicionário -> dict(..)
+
+def segundoitem(lista):
+    return lista[0]
+vendas_produtos = {'vinho': 100,'cafeteira':150,'microondas':300,'iphone':5500}
+lista_produtos = list(vendas_produtos.items())
+lista_produtos.sort(key=segundoitem)
+print(lista_produtos)
+
+LIST COMPREHENSION -> ver se não dá pra usar no lugar do FOR
+
+### lista = [expressao for item in iterable]
+### lista = [expressao for item in iterable if item > 100] -> filtro
+### lista = [expressao if item > 100 else 0 for item in iterable] -> preenche com condição
+
+impostos = [calcular_imposto(preco, 0.3) for preco in preco_produtos]
+
+
+FUNÇÕES
+
+MAP -> executa a função pra cada item da lista
+def ajusta_codigos(codigo):
+    codigo = codigo.strip()
+    codigo = codigo.replace(' ','')
+    codigo = codigo.upper()
+    return codigo
+cod_produtos = [' ABC12 ', 'abc34   ', '   A bC37 ', 'AbC 13  4', 'A A c 1 9 1 aaBB c']
+cod_produtos = list(map(ajusta_codigos,cod_produtos))
+
+SORT -> executa a função pra cada item da lista, pode passar um parâmetro (key)
+vendas_produtos = {'vinho': 100,'cafeteira':150,'microondas':300,'iphone':5500}
+lista_produtos = list(vendas_produtos.items())
+lista_produtos.sort(key=segundoitem)
+
+LAMBDA EXPRESSION -> ver se não dá pra usar/substituir no lugar de uma função (evitar criar uma função simples com um comando)
+
+def minha_funcao(num):
+    return num * 2
+print(minha_funcao(5))
+
+minha_funcao2 = lambda num: num * 2
+print(minha_funcao2(5))
+
+FILTER
+
+-> retorna True ou False
+
+def ehmaior2000(item):
+    return item[1] > 2000
+
+produto_acima2000 = list(filter(ehmaior2000,vendas_tecnologia.items()))
+print(produto_acima2000)
+
+produto_acima2000_2 = list(filter(lambda valor: valor[1] > 2000, vendas_tecnologia.items()))
+print(produto_acima2000_2)
+
+
