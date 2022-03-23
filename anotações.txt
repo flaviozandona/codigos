@@ -20,6 +20,33 @@ impostos = [calcular_imposto(preco, 0.3) for preco in preco_produtos]
 
 FUNÇÕES
 
+Quantidade Indefinidas de Argumentos
+Utilidade: Quando você quer permitir uma quantidade indefinida de argumentos, usa o * para isso.
+
+*args para positional arguments -> argumentos vêm em formato de tupla
+def minha_funcao(*args):
+        
+    def minha_soma(*numeros):
+    print(numeros)
+    soma = 0
+    for numero in numeros:
+        soma += numero
+    return soma
+
+**kwargs para keyword arguments -> argumentos vêm em formato de dicionário
+def minha_funcao(**kwargs):
+
+def preco_final(preco, **adicionais):
+    print(adicionais)
+    if 'desconto' in adicionais:
+        preco *= (1 - adicionais['desconto'])
+    if 'garantia_extra' in adicionais:
+        preco += adicionais['garantia_extra'] 
+    if 'imposto' in adicionais:
+        preco *= (1 + adicionais['imposto'])
+    return preco
+    
+    
 MAP -> executa a função pra cada item da lista
 def ajusta_codigos(codigo):
     codigo = codigo.strip()
